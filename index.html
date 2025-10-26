@@ -17,6 +17,26 @@
   #stageWrap{overflow:auto; border-radius:14px; border:1px solid #1f2a36;}
   #stage{display:block; background:#0b0f14}
   .srcs{font-size:12px; line-height:1.35; margin-top:16px; color:var(--muted)}
+
+.legend-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.legend-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+}
+
 </style>
 </head>
 <body>
@@ -32,9 +52,20 @@
       <label>Zoom center (Ga): <span id="zoomOut">2.30</span></label>
       <input id="zoom" type="range" min="-1.95" max="2.45" step="0.05" value="2.3" />
       <label><input id="showTicks" type="checkbox" checked /> Show ticks</label>
+
+      <h2 style="font-size:14px; color:var(--muted); margin-top:14px;">Color legend</h2>
+
+      <div class="legend-box">
+      <div class="legend-item"><div class="legend-swatch" style="background:#89c2ff"></div> Biology</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:#ffd089"></div> Environment</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:#ff8d8d"></div> Extinction</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:#ffffff"></div> Humans</div>
+      </div>
+
       <h2 style="font-size:14px; color:var(--muted); margin-top:14px;">Included events</h2>
       <div id="evList" class="tiny"></div>
     </aside>
+
 
     <section class="panel" id="stageWrap">
       <svg id="stage" xmlns="http://www.w3.org/2000/svg" width="4600" height="400" viewBox="0 0 4600 400"></svg>
