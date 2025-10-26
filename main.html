@@ -82,9 +82,9 @@
   }
 
   function fmtAge(myr){
-    if(myr >= 1000) return (myr/1000).toFixed(2).replace(/\.00$/,'') + ' Ga';
-    if(myr >= 1) return Math.round(myr) + ' Myr';
-    return Math.round(myr*1000) + ' Kyr';
+    if(myr >= 1000) return (myr/1000).toFixed(2).replace(/\.00$/,'') + ' GYA';
+    if(myr >= 1) return Math.round(myr) + ' MYA';
+    return Math.round(myr*1000) + ' KYA';
   }
 
   function render(){
@@ -158,7 +158,7 @@
     });
   }
 
-  evList.innerHTML = events.map(e => `• ${e.label} — ${fmtAge(e.t)} ago`).join('<br>');
+  evList.innerHTML = events.map(e => `• ${e.label} — ${fmtAge(e.t)}`).join('<br>');
 
   ppm.addEventListener('input', render);
   zoomCtl.addEventListener('input', render);
